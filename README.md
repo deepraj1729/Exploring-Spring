@@ -2,8 +2,8 @@
 Exploring Spring and Sprinboot by building projects
 
 ## Requirements
-Java-JDK: 17
-IDE supporting Maven Integration: Intellij IDEA or Elcipse
+- Java-JDK: 17
+- IDE supporting Maven Integration: Intellij IDEA or Elcipse
 
 ## Setup JAVA PATH:
 JAVA_HOME: "path/to/jdk/"
