@@ -1,0 +1,87 @@
+.pad-top-6{
+    padding-top:6vh;
+}
+
+.pad-3{
+    padding:3vh;
+}
+
+
+/*Dashboard headers*/
+
+.dash-headers{
+    border-radius: 15px;
+    height:100px;
+    padding:20px;
+}
+
+#dash-portfolio-h2{
+    color: aqua;
+    text-align: center;
+}
+
+#dash-balance-h2{
+    color: rgb(36, 230, 133);
+    text-align: center;
+}
+
+#dash-deposited-h2{
+    color: rgb(224, 176, 20);
+    text-align: center;
+}
+
+.dash-header-span{
+    color: azure;
+}
+
+/*Dashboard Favourites*/
+.dash-border{
+    border-radius: 15px;
+}
+
+#dash-fav-h4{
+    color: rgb(180, 224, 20);
+    text-align: center;
+    padding:2vh;
+}
+
+#dash-inv-h4{
+    color: rgb(241, 10, 106);
+    text-align: center;
+    padding:0.5vh;
+}
+
+#dash-ord-h4{
+    color: rgb(70, 159, 243);
+    text-align: center;
+    padding:0.5vh;
+}
+
+.dash-no-content{
+    margin-top: 2vh;
+    padding: 20px;
+}
+
+.dash-no-content-h4{
+    text-align: center;
+    color:azure;
+}
+
+.hr-seperator{
+    height:3px;
+    margin-top:2vh;
+    margin-bottom:2vh;
+}
+
+.card-spacing{
+    margin-top: 8vh;
+    border-radius: 20px;
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+    background-color:black;
+    color:white;
+}
+
+.marg-bottom-6{
+    margin-bottom:6vh;
+}
+
