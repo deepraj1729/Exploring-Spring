@@ -18,10 +18,11 @@ JAVA_HOME: "path/to/jdk/"
         |__ Springboot application to get Latest data of Covid19 cases
         |__ Runs on Localhost:8080 (as per Tomcat server default PORT setting)
     
-    student-management-app/
+    course-management-logger/
         |__ Springboot application based on CRUD application using Spring Data JPA, Spring-boot, MySQL
-        |__ REST API with endpoints "/students", "/students/{id}" serving on localhost:8080
+        |__ REST API with endpoints "/courses", "/courses/{id}" serving on localhost:8080
         |__ Methods GET, POST, PUT, DELETE
+        |__ Save RequestType and Timestamp to a Logging Table (in same DB)
     
     
       
