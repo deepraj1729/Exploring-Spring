@@ -6,11 +6,13 @@ import com.deepraj1729.coursemanagementlogger.entity.Request;
 import com.deepraj1729.coursemanagementlogger.service.CourseService;
 import com.deepraj1729.coursemanagementlogger.service.RequestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class CourseController {
     @Autowired
     private CourseService courseService;
@@ -21,7 +23,9 @@ public class CourseController {
 
     // GET: /courses (returns a list of courses)
     @GetMapping("/courses")
-    public List<Course> listCourses() {
+    public String home(Model model) {
+        List<Course> coursesList = courseService.getAllCourses();
+        int totalCourses = courseService.getAllCourses().size();
 
         //Logging
         String requestType = "GET /courses";
@@ -31,7 +35,9 @@ public class CourseController {
         newReq.setTimeStamp(timeStamp);
         requestService.saveRequest(newReq);
 
-        return courseService.getAllCourses();
+        model.addAttribute("courseList", coursesList);
+        model.addAttribute("totalCourses", totalCourses);
+        return "home";
     }
 
     // GET: /courses/{id} {returns a particular course by id)
@@ -45,13 +51,20 @@ public class CourseController {
         newReq.setRequestType(requestType);
         newReq.setTimeStamp(timeStamp);
         requestService.saveRequest(newReq);
-
         return courseService.getCourseById(courseID);
+    }
+
+    @GetMapping("/courses/create")
+    public String createCoursePage(Model model){
+        Course course = new Course();
+        model.addAttribute("course",course);
+        return "create_course";
     }
 
     //POST: /courses {Creates a new Course returns httpResponse}
     @PostMapping("/courses")
-    public Course createCourse(@RequestBody Course course){
+    public String createCourse(@ModelAttribute("course") Course course){
+
         //Logging
         String requestType = "POST /courses/";
         LocalDateTime timeStamp = LocalDateTime.now();
@@ -59,8 +72,8 @@ public class CourseController {
         newReq.setRequestType(requestType);
         newReq.setTimeStamp(timeStamp);
         requestService.saveRequest(newReq);
-
-        return courseService.saveCourse(course);
+        courseService.saveCourse(course);
+        return "redirect:/courses";
     }
 
     //PUT: /course/{id} {Updates an existing course)

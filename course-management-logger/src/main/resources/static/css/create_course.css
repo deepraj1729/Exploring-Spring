@@ -1,0 +1,14 @@
+.marg-top-6{
+    margin-top:10vh;
+}
+
+.marg-top-3{
+    margin-top: 3vh;
+}
+
+.box-shd{
+    border-radius: 20px;
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+    background-color:black;
+    color:white;
+}
