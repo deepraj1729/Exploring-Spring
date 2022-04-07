@@ -95,4 +95,10 @@ public class CourseController {
         courseService.deleteCourseById(id);
     }
 
+    //GET /logging
+    @GetMapping("/logging")
+    public List<Request> getAllRequestLogs(){
+        return requestService.getAllRequest();
+    }
+
 }
