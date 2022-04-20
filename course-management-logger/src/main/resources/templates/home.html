@@ -38,10 +38,15 @@
                     <tr>
                         <th>Course Name</th>
                         <th>Course Author</th>
+                        <th>Actions</th>
                     </tr>
                     <tr th:each="course : ${courseList}">
                         <td th:text="${course.name}"></td>
                         <td th:text="${course.author}"></td>
+                        <td>
+                            <form th:action="@{/courses/{course.id}}" th:object="${course}" method="DELETE">
+                                <a class="btn btn-danger">Delete</a>
+                            </form>
                     </tr>
                 </table>
             </div>
